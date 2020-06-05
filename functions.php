@@ -229,7 +229,7 @@ function getNewMessageHTML($fromUserID, $toUserID){
 		}
 		else{
 			$html = "<div class='row'>
-						  <div class='col-1'><img src='" . $avatarPath . "' class='avatar'></div>
+						  <div class='col-3'><img src='" . $avatarPath . "' class='avatar'></div>
 						  <div class='col-7 toMessage'>
 						  	<p>" . $content . "</p>
 						  </div>
@@ -262,7 +262,7 @@ function loadMessageToHTML($fromUserID, $toUserID){
 		// nếu như content là của người gửi thì hiển thị bên form người gửi
 		if ($row['fromUserID'] == $fromUserID) {
 			$html = "<div class='row'>
-						  <div class='col-3'></div>
+						  <div class='col-4'></div>
 						  <div class='col-7 fromMessage'>
 						  	<p>" . $content . "</p>
 						  </div>
@@ -362,7 +362,6 @@ function inDSCmtHTML($postID){
 		$fname = $row['fullname'];
 		$avt =$row['avatar'];
 		$content = $row['content'];
-		//alt="Avatar" class="avatar" style="float: left; border-radius: 20%; margin-right: 10px;"
 		$result = $result . "<img src='".$avt."' alt='Avatar' class='avatar' style='float: left; border-radius: 20%; margin-right:10px;'>".
 		"<p style='width: 800px;'>
 			<strong>

@@ -14,7 +14,7 @@ require_once 'functions.php';
 		<?php 
 			$getUser=getUserByID($_GET['userID']); 
 		?>
-<body style="font-family: serif;background-image: url(http://getwallpapers.com/wallpaper/full/b/7/b/74785.jpg); ">
+<body style="font-family: serif;background-image: url(pictures/background.jpg); ">
 	<div class="sidenav">
 		<div class="card" style="width: 18rem;">
 			<img src="<?php echo $getUser['avatar']?>" class="card-img-top" alt="..." style="width: 300px;height: 300px;">
