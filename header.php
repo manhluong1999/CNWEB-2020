@@ -238,6 +238,15 @@
 		        	</div>
 		        </a>	
 		      </li>
+		      <li style="margin-left: 10px; margin-top: 8px;">
+		     		
+
+				<input type="text" name="timkiem" id="timkiem" class="form-control" placeholder="Search..." >
+				
+
+				<div  id="show-list"  style="display: block; position: absolute;"> 
+				</div>
+		      </li>
 		      <li class="nav-item <?php echo $page=='change-password' ? 'active' : '' ?>"  style="margin-left: 10px; margin-top: 8px;">
 		        <a class="nav-link" href="change-password.php">Đổi mật khẩu</a>
 		      </li>
@@ -254,3 +263,27 @@
 		</nav>
 	</div>
 
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#timkiem").keyup(function(){
+			var searchText=$(this).val();
+			if(searchText!=''){
+				$.ajax({
+					url:'search.php',
+					method:'post',
+					data:{query:searchText},
+					success:function(response){
+						$("#show-list").html(response);
+					}
+				});
+			}
+			else{
+				$("#show-list").html('');
+			}
+		});
+		$(document).on('click','a',function(){
+			$("#timkiem").val($(this).text());
+			$("#show-list").html('');
+		});
+	});
+</script>
