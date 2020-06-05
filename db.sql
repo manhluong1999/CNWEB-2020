@@ -1,5 +1,4 @@
--- trần khôi 1660281
-
+-- LTM
 CREATE DATABASE web2020
 CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci';
 USE web2020;
