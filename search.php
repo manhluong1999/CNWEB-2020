@@ -22,7 +22,7 @@
 		if($result->num_rows>0){
 			while($row=$result->fetch_assoc()){
 	
-				echo "<a href='http://localhost/CNWEB-2020/trang-ca-nhan.php?userID=".$row['userID']."' class='list-group-item list-group-item-action-border-1'>".$row['fullname']."</a>";
+				echo "<a href='trang-ca-nhan.php?userID=".$row['userID']."' class='list-group-item list-group-item-action-border-1'>".$row['fullname']."</a>";
 			}
 		}
 		else{

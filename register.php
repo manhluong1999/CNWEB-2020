@@ -95,7 +95,8 @@ require_once 'functions.php';
                 $code = getRandomStr();
                 setCodeByEmail($email, $code);
             ?>
-                Đăng kí thành công
+                Đăng kí thành công. 
+            <a href="login.php"> Về trang đăng nhập</a>
         </div>
         <?php endif; ?>
 <?php
