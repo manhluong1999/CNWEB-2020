@@ -224,7 +224,7 @@
 	        		$sl = totalFriendRequest($currentUser['userID']);
 		        ?>
 		        <a class="nav-link" href="friend-request.php" <?php echo ($sl > 0 ? "style='color: red;'" : "") ?>>
-		        	<img style="float: left;" src="icon/friend-request.png" alt="Avatar" class="avatar">
+		        	<img style="float: left;" src="icon/friend-request2.png" alt="Avatar" class="avatar">
 		        	<div id="totalFriendRequest" >
 			        	<?php echo "(" . $sl . ")"; ?>
 		        	</div>

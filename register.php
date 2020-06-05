@@ -86,7 +86,7 @@ require_once 'functions.php';
     <?php endif;?>
     <?php 
         global $db;
-        $stmt = $db->prepare("INSERT INTO myuser(email, password, username, fullname, phonenumber ,status) VALUES (?,?,?,?,?,1)");
+        $stmt = $db->prepare("INSERT INTO myuser(email, password, username, fullname, phonenumber ,status,avatar) VALUES (?,?,?,?,?,1,'avatars/macdinh.jpg')");
         $stmt->execute(array($email, password_hash($password, PASSWORD_DEFAULT), $username, $fullname, $phonenumber));
         //$row = $stmt->fetch(PDO::FETCH_ASSOC);
     ?>
