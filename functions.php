@@ -1,15 +1,6 @@
 <?php 
 ob_start(); // xóa kí tự lạ đầu file
 
-include "PHPMailer-master/src/PHPMailer.php";
-include "PHPMailer-master/src/Exception.php";
-include "PHPMailer-master/src/OAuth.php";
-include "PHPMailer-master/src/POP3.php";
-include "PHPMailer-master/src/SMTP.php";
- 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
 // lấy các bài viết (và người viết bài đó) phù hợp với userID đó
 function getNewFeed($userID){
 	global $db;
