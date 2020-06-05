@@ -21,10 +21,10 @@
 						$getUser=getUserByID($row); 
 						$rela = checkRelationship($currentUser['userID'], $getUser['userID']);
 					?>
-					<div class="card" style="width: 18rem; float: top;">
-						<img src="<?php echo $getUser['avatar']?>" class="card-img-top" style="width: 300px ; height: 300px" alt="...">
+					<div class="card" style="width: 300px; float: top;">
+						<img src="<?php echo $getUser['avatar']?>" class="card-img-top" style="width: 299px ; height: 250px; " alt="...">
 						<div class="card-body">
-							<a class="card-title" href="trang-ca-nhan.php?userID=<?php echo $getUser['userID']; ?>"><h5><?php echo $getUser['fullname']?><h5></a>
+							<a class="card-title" href="trang-ca-nhan.php?userID=<?php echo $getUser['userID']; ?>"><h5><?php echo $getUser['fullname']?></h5></a>
 							<?php if ($getUser['userID'] == $currentUser['userID']): ?>
 								<a href="update-profile.php" class="btn btn-primary">Cập nhật thông tin</a>
 							<?php else: ?>

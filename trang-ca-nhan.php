@@ -16,9 +16,10 @@ require_once 'functions.php';
 		?>
 	<div class="sidenav">
 		<div class="card" style="width: 18rem;">
-			<img src="<?php echo $getUser['avatar']?>" class="card-img-top" alt="...">
+			<img src="<?php echo $getUser['avatar']?>" class="card-img-top" alt="..." style="width: 300px;height: 300px;">
 			<div class="card-body">
 				<h5 class="card-title"><?php echo $getUser['fullname']?></h5>
+				<p class="card-text"> Biệt danh: <?php echo $getUser['username'] ?> </p>
 				<p class="card-text"> Email: <?php echo $getUser['email'] ?> </p>
 				<p class="card-text"> Số Điện Thoại: <?php echo $getUser['phonenumber'] ?> </p>
 				<?php if ($getUser['userID'] == $currentUser['userID']): ?>
