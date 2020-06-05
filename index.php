@@ -41,25 +41,27 @@
 		$rowEndIndex = $totalRow;
 	}
 ?>
-
+<body style="font-family: serif;background-image: url(http://getwallpapers.com/wallpaper/full/b/7/b/74785.jpg); ">
 	<div class="container">
 		<h1>Chào mừng <?php echo $currentUser['fullname'] ?> đã quay trở lại</h1>
 		<form method="POST" action="create-post.php" enctype="multipart/form-data">
 			<div class="form-group">
-				<textarea style="width: 80%;" class="form-control" rows="3" id="post" name="content[]" placeholder="Bạn đang nghĩ gì ?"></textarea>
+				<textarea style="width: 100%; border-radius:15px;" class="form-control" rows="3" id="post" name="content[]" placeholder="Bạn đang nghĩ gì ?"></textarea>
 				<div class="custom-file">
 					<input type='file' id="i_file" name='hinhanh[]' multiple>
 				</div>
-				<div>
-					<label for="selectPrivacy">Chế độ: </label>	
-					<select id="selectPrivacy" name="privacy">
-						<option value="private" >Riêng tư</option>
-						<option value="friend" >Bạn bè</option>
-						<option value="public" selected>Công khai</option>
-					</select>
-				</div>
-				<div>
-					<button name="submit" type="submit" class="btn btn-primary">Đăng bài viết</button>
+				<div class="row">
+					<div class="col-sm-2">
+						<select id="selectPrivacy" class="btn btn-secondary" name="privacy">
+							<option value="private" >Riêng tư</option>
+							<option value="friend" >Bạn bè</option>
+							<option value="public" selected>Công khai</option>
+						</select>
+					</div>
+					
+					<div class="col-sm-2">
+						<button name="submit" type="submit"  " class="btn btn-primary">Đăng bài viết</button>
+					</div>
 				</div>
 			</div>
 		</form>
@@ -82,8 +84,8 @@
 							<a href="trang-ca-nhan.php?userID=<?php echo $row['userID'];?>">
 								<h3><?php echo  $row['fullname']; ?></h3>
 							</a>
-							<p>Đăng lúc <?php echo date_format(date_create($row['timecreate']),"d/m/Y H:i:s"); ?></p>
-							<select <?php 
+							<p style="color:gray;font-style: italic;">Đăng lúc <?php echo date_format(date_create($row['timecreate']),"d/m/Y H:i:s"); ?></p>
+							<select class="btn btn-secondary" <?php 
 										$cuaCurrent = checkPostOfUser($row['postID'], $currentUser['userID']);
 										echo ($cuaCurrent == 'true' ? '' : 'disabled');
 									?>
@@ -172,3 +174,4 @@
 		</nav>		
 	</div>
 <?php include 'footer.php'; ?>
+</body>

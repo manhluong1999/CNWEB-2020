@@ -4,7 +4,7 @@ require_once 'init.php';
 require_once 'functions.php';
 ?>
 <?php include "header.php"; ?>
-
+<body style="font-family: serif;">
     <h1>Đăng nhập</h1>
     <div  style{ align="right";}>
 
@@ -58,3 +58,4 @@ require_once 'functions.php';
 include "footer.php";
 ob_end_flush(); // xóa các kí tự lạ cuối file
 ?>
+</body>

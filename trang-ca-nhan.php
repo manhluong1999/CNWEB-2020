@@ -14,6 +14,7 @@ require_once 'functions.php';
 		<?php 
 			$getUser=getUserByID($_GET['userID']); 
 		?>
+<body style="font-family: serif;background-image: url(http://getwallpapers.com/wallpaper/full/b/7/b/74785.jpg); ">
 	<div class="sidenav">
 		<div class="card" style="width: 18rem;">
 			<img src="<?php echo $getUser['avatar']?>" class="card-img-top" alt="...">
@@ -140,8 +141,9 @@ require_once 'functions.php';
 							<a href="trang-ca-nhan.php?userID=<?php echo $row['userID'];?>">
 								<h3><?php echo  $row['fullname']; ?></h3>
 							</a>
-							<p>Đăng lúc <?php echo date_format(date_create($row['timecreate']),"d/m/Y H:i:s"); ?></p>
-							<select <?php 
+							<p style="color:gray;font-style: italic;">Đăng lúc <?php echo date_format(date_create($row['timecreate']),"d/m/Y H:i:s"); ?></p>
+
+							<select class="btn btn-secondary"<?php 
 										$cuaCurrent = checkPostOfUser($row['postID'], $currentUser['userID']);
 										echo ($cuaCurrent == 'true' ? '' : 'disabled');
 									?>
@@ -152,7 +154,7 @@ require_once 'functions.php';
 								<option value="public" <?php echo ($privacy == 'public' ? 'selected' : ' ') ;?>>Công khai</option>
 							</select>
 					 	</div>
-						<textarea class="form-control" rows="<?php echo getTotalLine($row['content']); ?>" readonly="readonly"><?php echo $row['content']; ?>
+						<textarea  class="form-control" rows="<?php echo getTotalLine($row['content']); ?>" readonly="readonly"><?php echo $row['content']; ?>
 						</textarea>
 						<?php echo inDSPicPostHTML($row['postID']); ?>
 						<p style="margin-top: 10px;" id="<?php echo $plikeID;?>">
@@ -243,3 +245,4 @@ require_once 'functions.php';
 include "footer.php";
 ob_end_flush(); // xóa các kí tự lạ cuối file
 ?>
+</body>

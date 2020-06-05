@@ -5,6 +5,7 @@ require_once 'functions.php';
 // Xử lý logic ở đây
 
 ?>
+<body style="font-family: serif;background-image: url(http://getwallpapers.com/wallpaper/full/b/7/b/74785.jpg); ">
 <?php 
     include "check-before-login.php";
     include "header.php";
@@ -58,3 +59,4 @@ require_once 'functions.php';
 include "footer.php";
 ob_end_flush(); // xóa các kí tự lạ cuối file
 ?>
+</body>

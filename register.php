@@ -5,6 +5,7 @@ require_once 'functions.php';
 // Xử lý logic ở đây
 ?>
 <?php include "header.php"; ?>
+<body style="font-family: serif;">
     <h1 style{ align="center";}>Đăng ký</h1>
     <div style{ align="right";}>
         <form method="POST" action="register.php">
@@ -103,3 +104,4 @@ require_once 'functions.php';
 include "footer.php";
 ob_end_flush(); // xóa các kí tự lạ cuối file
 ?>
+</body>

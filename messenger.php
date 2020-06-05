@@ -14,11 +14,12 @@ require_once 'functions.php';
 		<?php 
 			$getUser=getUserByID($_GET['userID']); 
 		?>
+		<body style="font-family: serif;background-image: url(http://getwallpapers.com/wallpaper/full/b/7/b/74785.jpg); ">
 		<div>
 			<div class="auto" id="divChat">
 				<?php echo loadMessageToHTML($currentUser['userID'], $getUser['userID'])?>
 			</div>
-			<p>Bạn đang chat với <?php echo $getUser['fullname'];?></p>
+			<p class="btn btn-danger">Bạn đang chat với <?php echo $getUser['fullname'];?></p>
 			<form method="post" action="xulyMessage.php" style="position: fixed;margin-left: 300px;bottom: 10px;width: 700px;">
 				<input type="input" name="content" id="inputMessage" style="width: 600px;" placeholder="Nhập tin nhắn ...">
 				<input type="input" name="userID" value='<?php echo $getUser['userID'];?>' style="display: none;">
@@ -35,3 +36,4 @@ require_once 'functions.php';
 include "footer.php";
 ob_end_flush(); // xóa các kí tự lạ cuối file
 ?>
+</body>

@@ -19,6 +19,7 @@
 				die("Bạn không có tin nhắn nào");
 			}
 		?>
+<body style="font-family: serif;background-image: url(http://getwallpapers.com/wallpaper/full/b/7/b/74785.jpg); ">	
 		<div class="container">
 			<?php foreach ($messages as $message): ?>
 				<?php 
@@ -53,7 +54,7 @@
 										href="messenger.php?userID=<?php echo $partner['userID'];?>" >
 										<?php echo $actionStr;?>
 								</a>
-								<span><?php echo date_format(date_create($message['timecreate']),"d/m/Y H:i:s"); ?></span>
+								<span style="color:gray;font-style: italic;"><?php echo date_format(date_create($message['timecreate']),"d/m/Y H:i:s"); ?></span>
 							</div>
 							<div style="background-color: #d9a250;">
 								<?php echo $message['content'];  ?>
@@ -71,3 +72,4 @@
 include "footer.php";
 ob_end_flush(); // xóa các kí tự lạ cuối file
 ?>
+</body>
