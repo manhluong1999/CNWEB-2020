@@ -19,13 +19,8 @@ require_once 'functions.php';
 			<div class="auto" id="divChat">
 				<?php echo loadMessageToHTML($currentUser['userID'], $getUser['userID'])?>
 			</div>
-<<<<<<< HEAD
 			<p class="btn btn-danger">Bạn đang chat với <?php echo $getUser['fullname'];?></p>
-			<form method="post" action="xulyMessage.php" style="position: fixed;margin-left: 300px;bottom: 10px;width: 700px;">
-=======
-			<b style="color: blue">Bạn đang chat với <?php echo $getUser['fullname'];?></b>
 			<form method="post" action="xulyMessage.php" style="position: fixed;margin-left: 300px;bottom: 175px;width: 700px;">
->>>>>>> ae8863c5c040c330ae339da95867d3c9e6f05c5e
 				<input type="input" name="content" id="inputMessage" style="width: 600px;" placeholder="Nhập tin nhắn ...">
 				<input type="input" name="userID" value='<?php echo $getUser['userID'];?>' style="display: none;">
 				<input type="submit" name="btnsubmit" value="Send"> 
