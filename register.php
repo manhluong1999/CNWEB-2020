@@ -94,8 +94,6 @@ require_once 'functions.php';
             <?php
                 $code = getRandomStr();
                 setCodeByEmail($email, $code);
-                $htmlContent = 'Để kích hoạt tài khoản, nhấp vào http://localhost:1403/login.php?code=' . $code; 
-                sendMail($email, 'Hướng dẫn kích hoạt', $htmlContent);
             ?>
                 Đăng kí thành công
         </div>

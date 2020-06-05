@@ -45,12 +45,7 @@ require_once 'functions.php';
             }
         }
         //$row = $stmt->fetch(PDO::FETCH_ASSOC);
-        //header("Refresh:0");
-        // hmm, ngộ ta, anh không biết nó lấy hình ở đâu
-        // ... Em chịu. Hay anh thử với file code đầu đi. Nhỡ may em bị ấn nhầm đâu đó
-        // file code nào em ?
-        // file tải trên web về ấy anh.
-        // đợi anh cái, em đi đâu đi, anh đi ăn cái .mới về nhà . Oke anh.
+        // header("Refresh:0");
     ?>
         <div class="alert alert-primary" role="alert">
             Cập nhật thành công. <a href="index.php">Về trang chủ</a>
