@@ -329,7 +329,7 @@ function inDSPicPostHTML($postID){
 
 	$htmlResult = '';
 	foreach ($rows as $row) {
-		$htmlResult = $htmlResult . "<img src='" . $row['picturePath'] . "' style='width: 300px; height: 300px;'>";
+		$htmlResult = $htmlResult . "<a href='".$row['picturePath']."'>'<img src='" . $row['picturePath'] . "' style='width: 300px; height: 300px;'>'</a>";
 	}
 	return $htmlResult;
 }
