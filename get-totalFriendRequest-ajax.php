@@ -13,7 +13,7 @@ require_once 'functions.php';
 	if (isset($_GET['userID'])) {
 		$userID = $_GET['userID'];
 
-		// lấy số lượnt thông báo và số lượng inbox
+		// lấy số lượng thông báo và số lượng inbox
 		$fr = totalFriendRequest($userID);
 		$ib = totalInboxRequest($userID);
 		$tach = "-";

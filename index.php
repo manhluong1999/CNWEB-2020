@@ -96,10 +96,28 @@
 					 	</div>
 						<textarea class="form-control" rows="<?php echo getTotalLine($row['content']); ?>" readonly="readonly"><?php echo $row['content']; ?>
 						</textarea>
-
 						<?php echo inDSPicPostHTML($row['postID']); ?>
 						<p style="margin-top: 10px;" id="<?php echo $plikeID;?>">
-
+							<?php
+								$tongLike = totalLike($row['postID']);	
+								if ($tongLike == 0) {
+									echo "Chưa có lượt thích";
+								}
+								else {
+									$currentLike = checkLike($row['postID'], $currentUser['userID']);
+									if ($currentLike) {
+										if ($tongLike == 1) {
+											echo "Bạn đã thích bài viết này";
+										}
+										else {
+											echo "Bạn và " . (string)($tongLike - 1) . " người khác đã thích bài viết này";
+										}
+									}
+									else {
+										echo "Có " . $tongLike . " người đã thích bài viết này";
+									}
+								}								
+							?>
 						</p>
 						<form id="<?php echo $fcmtID;?>">
 							<div class="form-group">
@@ -111,7 +129,7 @@
 											type="button">
 										<?php 
 											if (checkLike($row['postID'], $currentUser['userID'])){
-												echo "Bỏ Thích";
+												echo "Bỏ thích";
 											}
 											else {
 												echo "Thích";
