@@ -3,7 +3,7 @@
   require_once ('init.php');
   require_once ('functions.php');
 ?>
-<body style="font-family: serif;background-image: url(http://getwallpapers.com/wallpaper/full/b/7/b/74785.jpg); ">
+<body style="font-family: serif;background-image: url(pictures/background.jpg); ">
 <?php 
   include 'check-before-login.php';
   include 'header.php';
