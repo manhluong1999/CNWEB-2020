@@ -52,10 +52,6 @@ require_once 'functions.php';
                     Đăng nhập thất bại
                 </div>
             <?php endif; ?>
-        <!-- <?php else: ?>
-            <div class="alert alert-danger" role="alert">
-                Bạn chưa kích hoạt tài khoản<br>Vui lòng kiểm tra email và làm theo hướng dẫn
-            </div> -->
         <?php endif; ?>
     <?php endif; ?>
 <?php
