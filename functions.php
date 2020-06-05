@@ -352,27 +352,28 @@ function loadCmtForPost($postID){
 }
 
 // xuất danh sách các comment dưới dạng html
-//<p style='width: 800px;'><strong><a href='trang-ca-nhan.php?userID=2'>tên gì đó</a></strong>: <abbr title='3:34:4'>fsdf</abbr></p>
 
 function inDSCmtHTML($postID){
 	$rows = loadCmtForPost($postID);
 	$result = "";
 	foreach ($rows as $row) {
-		$time = date_format(date_create($row['timecreate']),"d/m/Y H:i:s");
+		$time = date_format(date_create($row['timecreate']),"d/m H:i:s");
 		$uid = $row['userID'];
 		$fname = $row['fullname'];
+		$avt =$row['avatar'];
 		$content = $row['content'];
-		$result = $result . 
+		//alt="Avatar" class="avatar" style="float: left; border-radius: 20%; margin-right: 10px;"
+		$result = $result . "<img src='".$avt."' alt='Avatar' class='avatar' style='float: left; border-radius: 20%; margin-right:10px;'>".
 		"<p style='width: 800px;'>
 			<strong>
-				<a href='trang-ca-nhan.php?userID=" . $uid . "'>" . $fname . "</a>
-			</strong> : " . 
-			"<abbr title='" . "Đã bình luận lúc " . $time . "'>" . $content . "</abbr>
+				<a href='trang-ca-nhan.php?userID=" . $uid . "'>" . $fname . "</a> : " . $content ."
+			</strong>  " . 
+			"<i>" ."<br>" ."( " . $time .")</i>
 		</p>";
 	}
 	return $result;
 }
-//		<abbr title='3:34:4'><p style='width: 800px;'><strong><a href='trang-ca-nhan.php?userID=2'>tên gì đó</a></strong> : fsdf</p></abbr>
+
 
 // kiểm tra xem ai đó có like bài viết đó hay không
 function checkLike($postID, $userID){
