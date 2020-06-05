@@ -1,5 +1,5 @@
 <html><head>
-	<title>LTM</title>
+	<title>Social Media</title>
 	<link rel="icon" type="image/png" href="icon/facebook.png"/>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -196,7 +196,9 @@
 <body class="container-fluid">
 	<div>
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-		  <a class="navbar-brand" href="index.php">Social Media</a>
+		  <a  class="nav-link" href="index.php">
+		        	<img style="float: left;" src="icon/facebook.png" alt="Avatar" class="avatar">
+		        </a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
@@ -204,7 +206,7 @@
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		    <ul class="navbar-nav mr-auto">
 		      <li class="nav-item <?php echo $page=='index' ? 'active' : '' ?>" >
-		        <a class="nav-link" href="index.php">Trang chủ<span class="sr-only">(current)</span></a>
+		        
 		      </li>
 		      <?php if (!isset($_SESSION['userID'])): ?>
 			  <li class="nav-item <?php echo $page=='login' ? 'active' : '' ?>">
