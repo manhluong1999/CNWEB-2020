@@ -19,8 +19,8 @@ require_once 'functions.php';
 			<img src="<?php echo $getUser['avatar']?>" class="card-img-top" alt="...">
 			<div class="card-body">
 				<h5 class="card-title"><?php echo $getUser['fullname']?></h5>
-				<p class="card-text"> Fboy</p>
-				
+				<p class="card-text"> Email: <?php echo $getUser['email'] ?> </p>
+				<p class="card-text"> Số Điện Thoại: <?php echo $getUser['phonenumber'] ?> </p>
 				<?php if ($getUser['userID'] == $currentUser['userID']): ?>
 					<a href="update-profile.php" class="btn btn-primary">Cập nhật thông tin</a>
 				<?php else: ?>
