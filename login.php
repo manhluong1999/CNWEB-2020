@@ -5,16 +5,6 @@ require_once 'functions.php';
 ?>
 <?php include "header.php"; ?>
 
-<!-- <?php if (isset($_GET['code'])) :?>
-    <?php 
-        $code = $_GET['code'];
-        setUserStatus($code, 1);
-        global $currentUser;
-        $currentUser = getCurrentUserByCode($code);
-    ?>
-<?php endif;?> -->
-
-
     <h1>Đăng nhập</h1>
     <div  style{ align="right";}>
 
