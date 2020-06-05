@@ -35,7 +35,7 @@ require_once 'functions.php';
             <div class="col-sm-3">
             <button type="submit" class="btn btn-primary">Đăng nhập</button>
             <p>Chưa có tài khoản ? <a href="register.php">Đăng ký</a></p>
-            <p>Quên mật khẩu ? <a href="forgot-password.php">Đặt lại mật khẩu</a></p>
+            <!-- <p>Quên mật khẩu ? <a href="forgot-password.php">Đặt lại mật khẩu</a></p> -->
             </div>
         </div>
     </form>
