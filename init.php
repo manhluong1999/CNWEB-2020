@@ -7,11 +7,6 @@
 	$stmt = $db->query("SELECT * FROM USER");
 	// Lấy hết toàn bộ dữ liệu
 	$data = null;
-	//$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	// hoặc lấy từng dòng
-	/*while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-	  echo $row['field1'] . ' ' . $row['field2']; 
-	}*/
 
     $row = null;
 
