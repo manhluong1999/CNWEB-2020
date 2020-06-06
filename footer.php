@@ -1,6 +1,6 @@
 	<div id="footer" style="position: fixed;z-index:9999999;bottom: 0;width: auto;right: 1%;">
-		<h5>TM MBook</h3>
-		<cite> Group 9</cite>
+		<h5 style="color: red ">Facebook ™</h3>
+		<cite style="color: blue"> Group 9</cite>
 	</div>
 	
 	<script>
