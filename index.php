@@ -41,7 +41,7 @@
 		$rowEndIndex = $totalRow;
 	}
 ?>
-<body style="font-family: serif;background-image: url(http://getwallpapers.com/wallpaper/full/b/7/b/74785.jpg); ">
+<body style="font-family: serif;background-image: url(pictures/background.jpg); ">
 	<div class="container">
 		<h1>Chào mừng <?php echo $currentUser['fullname'] ?> đã quay trở lại</h1>
 		<form method="POST" action="create-post.php" enctype="multipart/form-data">
