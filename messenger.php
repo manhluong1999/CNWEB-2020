@@ -16,13 +16,13 @@ require_once 'functions.php';
 		?>
 		<body style="font-family: serif; background-image: url(pictures/background.jpg); ">
 		<div>
-			<div class="auto" id="divChat">
+			<div class="auto" id="divChat" style="width: 60%">
 				<?php echo loadMessageToHTML($currentUser['userID'], $getUser['userID'])?>
 			</div>
 			<p class="btn btn-danger">Bạn đang chat với <?php echo $getUser['fullname'];?></p>
 			<form method="post" action="xulyMessage.php" style="position: fixed;margin-left: 300px;bottom: 65px;width: 700px;">
 				<input type="input" name="content" id="inputMessage" style="width: 600px;" placeholder="Nhập tin nhắn ...">
-				<input type="input" name="userID" value='<?php echo $getUser['userID'];?>' style="display: none;">
+				<input type="input" name="userID" value='<?php echo $getUser['userID'];?>' style="display:none;">
 				<input type="submit" name="btnsubmit" value="Send"> 
 			</form>
 		</div>

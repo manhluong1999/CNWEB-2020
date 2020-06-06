@@ -224,12 +224,12 @@ function getNewMessageHTML($fromUserID, $toUserID){
 						  <div class='col-7 fromMessage'>
 						  	<p>" . $content . "</p>
 						  </div>
-						  <div class='col-1'><img src='" . $avatarPath . "' class='avatar'></div>
+						  <div class='col-1'><img src='" . $avatarPath . "' class='avatar' alt='Avatar'></div>
 				    </div>";
 		}
 		else{
 			$html = "<div class='row'>
-						  <div class='col-3'><img src='" . $avatarPath . "' class='avatar'></div>
+						  <div class='col-3'><img src='" . $avatarPath . "' class='avatar' alt='Avatar'></div>
 						  <div class='col-7 toMessage'>
 						  	<p>" . $content . "</p>
 						  </div>
@@ -266,7 +266,7 @@ function loadMessageToHTML($fromUserID, $toUserID){
 						  <div class='col-7 fromMessage'>
 						  	<p>" . $content . "</p>
 						  </div>
-						  <div class='col-1'><img src='" . $avatarPath . "' class='avatar'></div>
+						  <div class='col-1'><img src='" . $avatarPath . "' class='avatar' alt=''></div>
 				    </div>";
 		}
 		else{
@@ -350,7 +350,17 @@ function loadCmtForPost($postID){
 	$stmt->execute(array($postID));
 	return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
-
+//
+function loadFriendForUser($userID){
+	global $db;
+	$stmt = $db->prepare("SELECT userIDSend	as fri  from friends,myuser
+WHERE userIDRecive=? and friends.status=1
+union
+SELECT userIDRecive as fri from friends,myuser
+WHERE userIDSend=? and friends.status=1");
+	$stmt->execute(array($userID));
+	return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 // xuất danh sách các comment dưới dạng html
 
 function inDSCmtHTML($postID){

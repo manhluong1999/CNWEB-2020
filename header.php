@@ -132,7 +132,7 @@
             margin-top:5px;
             width:300px;
             height:50px;
-            overflow:scroll;
+            overflow:hidden;
          }
          .auto{
             display:block;
@@ -143,8 +143,8 @@
             width:50%;
             height:500px;
             overflow-y:auto;
-            overflow-x:hidden;
-            background-color: #f5e7e6;
+            overflow-x:auto;
+            background-color: lightgoldenrodyellow;
          }
          .toMessage{
          	width: 90%;
@@ -152,10 +152,12 @@
          	text-align: left;
          }
          .toMessage p {
-         	background-color: #e3dcd5;
+         	background: #e3dcd5;
          	border-radius: 5%; 
          	float: left; 
          	text-align: left;
+         	color:#6d6d6d;
+         	font-size: 20px;
 		}
 
          .fromMessage{
@@ -164,10 +166,12 @@
          	text-align: right;
          }
          .fromMessage p {
-         	background-color: #ed93b3;
+         	background: #39f;
+         	color:#fff;
          	border-radius: 5%; 
          	float: right; 
          	text-align: right;
+         	font-size: 20px;
          }
 		/*----------------- TIN NHẮN ---------------------*/
 
