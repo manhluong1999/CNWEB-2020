@@ -275,7 +275,7 @@ function loadMessageToHTML($fromUserID, $toUserID){
 						  <div class='col-7 toMessage'>
 						  	<p>" . $content . "</p>
 						  </div>
-						  <div class='col-3'></div>
+						  <div class='col-1'></div>
 				    </div>";
 		}
 		$result = $result . "<br>" . $html;

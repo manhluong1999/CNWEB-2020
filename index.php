@@ -66,8 +66,10 @@
 				</div>
 			</div>
 		</form>
-		<?php
-			for ($i=$rowStartIndex; $i < $rowEndIndex; $i++):?>
+		<?php if($totalRow <=0){
+				echo "Khong co bai viet nao" ;
+			}else
+			for ($i=$rowStartIndex; $i < $rowEndIndex; $i++): ?>
 			<?php
 				$row = $rows[$i];
 
@@ -155,9 +157,7 @@
 						</form>		
 					 </div>
 				</div>
-
 		<?php endfor; ?>
-
 		<nav aria-label="..." style="margin-top: 10px;">
 			<ul class="pagination ">
 				<li class="page-item <?php echo ($pageIndex==0? 'disabled' : '')?>">
