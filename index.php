@@ -41,6 +41,7 @@
 		$rowEndIndex = $totalRow;
 	}
 ?>
+
 <body style="font-family: serif;background-image: url(pictures/background.jpg); ">
 	<div class="container">
 		<h1>Chào mừng <?php echo $currentUser['fullname'] ?> đã quay trở lại</h1>

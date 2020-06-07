@@ -115,6 +115,7 @@
 		}
 		.container {
 			margin-bottom: 60px;
+			max-width: 100%;
 		}
 		.avatar {
 			vertical-align: middle;
@@ -247,6 +248,9 @@
 		        	</div>
 		        </a>	
 		      </li>
+		      <li class="nav-item <?php echo $page=='sidebar' ? 'active' : '' ?>"  style="margin-left: 10px; margin-top: 8px;">
+		        <a class="nav-link" href="sidebar.php">Danh sách bạn bè</a>
+		      </li>
 		      <li style="margin-left: 10px; margin-top: 8px;">
 		     		
 
@@ -262,9 +266,7 @@
 		   	  <li class="nav-item <?php echo $page=='logout' ? 'active' : '' ?>"  style="margin-left: 10px; margin-top: 8px;">
 		        <a class="nav-link" href="logout.php">Đăng xuất</a>
 		      </li>
-		      <li class="nav-item <?php echo $page=='sidebar' ? 'active' : '' ?>"  style="margin-left: 10px; margin-top: 8px;">
-		        <a class="nav-link" href="sidebar.php">ListFriend</a>
-		      </li>
+		     
 
 		  	<?php endif; ?>
 <!-- 			  <li class="nav-item">
