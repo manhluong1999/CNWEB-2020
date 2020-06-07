@@ -1,14 +1,14 @@
 	<div id="footer" style="position: fixed;z-index:9999999;bottom: 0;width: auto;right: 1%;">
 		<h5 style="color: red ">Facebook ™</h3>
-		<cite style="color: blue"> Group 9</cite>
-	</div>
-	
-	<script>
+			<cite style="color: blue"> Group 9</cite>
+		</div>
+		
+		<script>
 
 		// ------------ TIN NHẮN ----------------
 		window.setInterval(function() {
 			var userID = <?php echo $getUser['userID']?>	// id người dùng đang nhắn tin với current
-	        $.ajax({
+			$.ajax({
 	            url : "get-message.php", // gửi ajax đến file result.php
 	            type : "get", // chọn phương thức gửi là get
 	            dateType:"html", // dữ liệu trả về dạng text
@@ -18,8 +18,8 @@
 	            success : function (result){
 	            	if (result.indexOf("div") !== -1) {
 	            		$('#divChat').append(result);
-					  	var elem = document.getElementById('divChat');
-					  	elem.scrollTop = elem.scrollHeight;
+	            		var elem = document.getElementById('divChat');
+	            		elem.scrollTop = elem.scrollHeight;
 	            	}
 	            }
 	        });
@@ -30,7 +30,7 @@
 		// ------------ kiểm tra thông báo kết bạn theo thời gian thực 
 		window.setInterval(function() {
 			var userID = <?php echo $currentUser['userID']?>	// id người dùng đang nhắn tin với current
-	        $.ajax({
+			$.ajax({
 	            url : "get-totalFriendRequest-ajax.php", // gửi ajax đến file result.php
 	            type : "get", // chọn phương thức gửi là get
 	            dateType:"text", // dữ liệu trả về dạng text
@@ -39,8 +39,8 @@
 	            },
 	            success : function (result){
 	            	var a = result.split("-");
-            		$('#totalFriendRequest').html(a[0]);
-            		$('#totalInbox').html(a[1]);
+	            	$('#totalFriendRequest').html(a[0]);
+	            	$('#totalInbox').html(a[1]);
 	            }
 	        });
 		}, 2000);

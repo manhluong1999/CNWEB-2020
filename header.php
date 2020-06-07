@@ -249,7 +249,7 @@
 		        </a>	
 		      </li>
 		      <li class="nav-item <?php echo $page=='sidebar' ? 'active' : '' ?>"  style="margin-left: 10px; margin-top: 8px;">
-		        <a class="nav-link" href="sidebar.php">Danh sách bạn bè</a>
+		        <a class="nav-link" href="listfriend.php">Danh sách bạn bè</a>
 		      </li>
 		      <li style="margin-left: 10px; margin-top: 8px;">
 		     		
@@ -269,9 +269,6 @@
 		     
 
 		  	<?php endif; ?>
-<!-- 			  <li class="nav-item">
-		        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Đăng nhập</a>
-		      </li> -->
 		    </ul>
 		  </div>
 		</nav>
