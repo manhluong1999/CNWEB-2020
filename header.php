@@ -262,6 +262,9 @@
 		   	  <li class="nav-item <?php echo $page=='logout' ? 'active' : '' ?>"  style="margin-left: 10px; margin-top: 8px;">
 		        <a class="nav-link" href="logout.php">Đăng xuất</a>
 		      </li>
+		      <li class="nav-item <?php echo $page=='sidebar' ? 'active' : '' ?>"  style="margin-left: 10px; margin-top: 8px;">
+		        <a class="nav-link" href="sidebar.php">ListFriend</a>
+		      </li>
 
 		  	<?php endif; ?>
 <!-- 			  <li class="nav-item">

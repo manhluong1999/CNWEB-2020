@@ -351,16 +351,6 @@ function loadCmtForPost($postID){
 	return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 //
-function loadFriendForUser($userID){
-	global $db;
-	$stmt = $db->prepare("SELECT userIDSend	as fri  from friends,myuser
-WHERE userIDRecive=? and friends.status=1
-union
-SELECT userIDRecive as fri from friends,myuser
-WHERE userIDSend=? and friends.status=1");
-	$stmt->execute(array($userID));
-	return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
 // xuất danh sách các comment dưới dạng html
 
 function inDSCmtHTML($postID){
@@ -540,7 +530,6 @@ function isFriend($userIDSend, $userIDRecive){
     	return true;
     }
 }
-
 // kiểm tra xem có đang chờ kết bạn từ một ai đó
 function isFriendRequest($userIDSend, $userIDRecive){
 	global $db;
@@ -620,38 +609,6 @@ function checkRelationship($currentUserID, $userID){
     }
 }
 
-function sendMail($email, $subject ,$htmlContent){
-	// $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
-	// try {
-	//     //Server settings
-	//     $mail->SMTPDebug = 2;                                 // Enable verbose debug output
-	//     $mail->isSMTP();                                      // Set mailer to use SMTP
-	//     $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-	//     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-	//     $mail->Username = 'manhlt.vnist@gmail.com';      // SỬ DỤNG TÀI KHOẢN NÀY ĐỂ GỬI MAIL CHO NGƯỜI KHÁC
-	//     $mail->Password = 'Mt19011999';                // MẬT KHẨU
-	//     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-	//     $mail->Port = 587;                                    // TCP port to connect to
-	 
-	//     //Recipients
-	//     $mail->CharSet = 'UTF-8';
-	//     $mail->setFrom('manhlt.vnist@gmail.com', 'Đổi mật khẩu');
-	//     $mail->addAddress($email, $email);     // Add a recipient
-	 
-	//     //Content
-	//     $mail->isHTML(true);                                  // Set email format to HTML
-	//     $mail->Subject = $subject;
-	//     $mail->Body    = $htmlContent;
-	//     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-	 
-	//     $mail->send();
-	//     echo 'Message has been sent';
-	// } catch (Exception $e) {
-	//     echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
-	// }
-	
-}
-
 function detectPage(){
 	$parts = explode('/', $_SERVER['REQUEST_URI']);
 	$fileName = $parts[count($parts)-1];
@@ -692,34 +649,9 @@ function setPassword($userID, $pass){
     $stmt->execute(array(password_hash($pass, PASSWORD_DEFAULT), $userID));
 }
 
-function setPasswordByCode($code, $pass){
-    $stmt = $GLOBALS['db']->prepare("UPDATE myuser SET password = ? WHERE code = ?");
-    $stmt->execute(array(password_hash($pass, PASSWORD_DEFAULT), $code));
-}
-
 function setCodeByEmail($email, $code){
     $stmt = $GLOBALS['db']->prepare("UPDATE myuser SET code = ? WHERE email = ?");
     $stmt->execute(array($code, $email));	
-}
-
-
-// Để có thể set được status thì cần phải có code được lấy từ gmail
-// status = 0, chưa kích hoạt tài khoản, không làm được gì
-// status = 1, đã kích hoạt tài khoản, có thể làm được mọi thứ, tuy nhiên không thể truy cập vào reset-password.php
-// status = 2, không làm được gì, chỉ có thể truy cập vào trang reset-password.php
-function setUserStatus($code, $status = 1){
-    $stmt = $GLOBALS['db']->prepare("UPDATE myuser SET status = ? WHERE code = ?");
-    $stmt->execute(array($status, $code));	
-}
-
-function unsetCurrentUser(){
-    $GLOBALS['currentUser'] = null;
-}
-
-// sẽ reset password của user nào có status = 2, sau khi reset xong thì sẽ chuyển status thành 1
-function resetPassword($newpass){
-    $stmt = $GLOBALS['db']->prepare("UPDATE myuser SET password = ? AND status = ? WHERE status = ?");
-    $stmt->execute(array(password_hash($newpass, PASSWORD_DEFAULT), 1, 2));
 }
 
 function getUserByID($id){
